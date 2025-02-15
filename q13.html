@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Pricing Plans</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        ul {
+            list-style-type: circle;
+        }
+        .button-style {
+            color: #7186aa;
+            padding: 5px;
+            background: linear-gradient(#dbdce0 0%, #dbdce0 100%);
+            border: none;
+            cursor: pointer;
+        }
+        .container>div {
+            display: flex;
+            justify-content: space-between;
+            padding: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+       
+        function Header(){
+            return (
+                <div>
+                    <div>
+                    <h2 style={{ background: "linear-gradient(#112848 0%, #112848 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>
+                        The Right Plan for
+                    </h2>
+                    <h2 style={{ color: "#7186aa" }}>Your Business</h2>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil, ex blanditiis magni aperiam temporibus 
+                        laborum numquam incidunt natus cumque dolores excepturi ab similique veniam, vitae ipsa necessitatibus dolorem. Eaque.
+                    </p>
+                </div>
+                </div>
+            );
+        }
+
+        function Plan({ title, price }) {
+            return (
+                <div>
+                    <h3 style={{ background: "linear-gradient(#112848 0%, #112848 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>
+                        {title}
+                    </h3>
+                    <ul>
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                    <h2>{price}</h2>
+                    <button className="button-style">Get Started</button>
+                </div>
+            );
+        }
+
+        function Usercard() { 
+            return (
+                <div className="container">
+                    <Header />
+                    <Plan title="Starter" price="Free" />
+                    <Plan title="Lorem Plus" price="$32.00" />
+                    <Plan title="Lorem Pro" price="$50.00" />
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<Usercard />);
+    </script>
+</body>
+</html>
